@@ -1,0 +1,35 @@
+{
+    "schemaVersion": 1,
+    "id": "autoswap",
+    "version": "${version}",
+    "environment": "client",
+    "entrypoints": {
+        "main": [ "de.guntram.mcmod.autoswap.AutoSwap" ]
+    },
+    "custom": {
+        "modmenu:clientsideOnly": false,
+        "modupdater": {
+            "strategy": "json",
+            "url": "https://raw.githubusercontent.com/gbl/ModVersionInfo/master/Autoswap.json"
+        }
+    },
+    "mixins": [
+      	"mixins.autoswap.json"
+    ],
+    "depends": {
+        "fabric": "*"
+    },
+    "recommends": {
+        "modmenu" : "*",
+        "modupdater": ">=1.1.7"        
+    },
+    "name": "Autoswap",
+    "description": "Automatically replace things in your hotbar when they run out",
+    "icon": "icon.png",
+    "authors": [ "Giselbaer" ],
+    "contact": {
+        "homepage": "https://www.curseforge.com/minecraft/mc-mods/autoswap",
+        "sources": "https://github.com/gbl/Autoswap",
+        "issues": "https://github.com/gbl/Autoswap/issues"
+    }
+}

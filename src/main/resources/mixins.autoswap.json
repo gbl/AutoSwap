@@ -1,0 +1,13 @@
+{
+    "required": true,
+    "package": "de.guntram.mcmod.autoswap.mixins",
+    "refmap": "autoswap-refmap.json",
+    "minVersion": "0.6",
+    "mixins": [
+        "MixinServerPlayNetworkHandler",
+        "MixinServerPlayerInteractionManager"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}
