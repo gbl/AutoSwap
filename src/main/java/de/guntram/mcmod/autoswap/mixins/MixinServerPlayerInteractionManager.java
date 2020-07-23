@@ -55,8 +55,7 @@ public abstract class MixinServerPlayerInteractionManager {
 			method = "interactBlock",
 			at = @At(
 					value = "INVOKE_ASSIGN",
-					target = "Lnet/minecraft/item/ItemStack;useOnBlock(Lnet/minecraft/item/ItemUsageContext;)Lnet/minecraft/util/ActionResult;",
-			)
+					target = "Lnet/minecraft/item/ItemStack;useOnBlock(Lnet/minecraft/item/ItemUsageContext;)Lnet/minecraft/util/ActionResult;")
 	)
 	private void afterUseOnBlock(ServerPlayerEntity player, World world, ItemStack heldStack, Hand hand, BlockHitResult result, CallbackInfoReturnable<ActionResult> cb) {
 		if (!isCreative() /* && cb.getReturnValue() == ActionResult.SUCCESS */) {
