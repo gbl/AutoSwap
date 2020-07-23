@@ -2,7 +2,7 @@
     "schemaVersion": 1,
     "id": "autoswap",
     "version": "${version}",
-    "environment": "client",
+    "environment": "*",
     "entrypoints": {
         "main": [ "de.guntram.mcmod.autoswap.AutoSwap" ]
     },
