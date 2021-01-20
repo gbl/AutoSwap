@@ -29,7 +29,7 @@ public abstract class MixinServerPlayNetworkHandler {
 			)
 	)
 	private void beforePlayerAttack(CallbackInfo cb) {
-		this.heldStackBeforeAttack = player.inventory.getMainHandStack().copy();
+		this.heldStackBeforeAttack = player.getInventory().getMainHandStack().copy();
 	}
 
 	@Inject(
@@ -41,7 +41,7 @@ public abstract class MixinServerPlayNetworkHandler {
 			)
 	)
 	private void afterPlayerAttack(CallbackInfo cb) {
-		AutoSwap.INSTANCE.afterAttack(player.inventory, heldStackBeforeAttack);
+		AutoSwap.INSTANCE.afterAttack(player.getInventory(), heldStackBeforeAttack);
 		heldStackBeforeAttack = ItemStack.EMPTY;
 	}
 

@@ -56,7 +56,7 @@ public class AutoSwap implements ModInitializer {
                     }
                     ArrayList<Pair<EquipmentSlot, ItemStack>> list =  new ArrayList<>();
                     list.add(new Pair(slot, newStack));
-                    player.networkHandler.sendPacket(new EntityEquipmentUpdateS2CPacket(player.getEntityId(),
+                    player.networkHandler.sendPacket(new EntityEquipmentUpdateS2CPacket(player.getId(),
                             list));
                     return;
                 }

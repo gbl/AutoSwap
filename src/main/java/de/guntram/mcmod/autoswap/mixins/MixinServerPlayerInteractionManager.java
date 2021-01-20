@@ -33,12 +33,12 @@ public abstract class MixinServerPlayerInteractionManager {
 
 	@Inject(method = "tryBreakBlock", at = @At("HEAD"))
 	private void beginTryBreakBlock(BlockPos pos, CallbackInfoReturnable<Void> cb) {
-		heldStackAtBeginningOfBreak = player.inventory.getMainHandStack().copy();
+		heldStackAtBeginningOfBreak = player.getInventory().getMainHandStack().copy();
 	}
 
 	@Inject(method = "tryBreakBlock", at = @At("RETURN"))
 	private void endTryBreakBlock(BlockPos pos, CallbackInfoReturnable<Void> cb) {
-		AutoSwap.INSTANCE.endBreakBlock(player.inventory, heldStackAtBeginningOfBreak);
+		AutoSwap.INSTANCE.endBreakBlock(player.getInventory(), heldStackAtBeginningOfBreak);
 		heldStackAtBeginningOfBreak = ItemStack.EMPTY;
 	}
 
@@ -59,7 +59,7 @@ public abstract class MixinServerPlayerInteractionManager {
 	)
 	private void afterUseOnBlock(ServerPlayerEntity player, World world, ItemStack heldStack, Hand hand, BlockHitResult result, CallbackInfoReturnable<ActionResult> cb) {
 		if (!isCreative() /* && cb.getReturnValue() == ActionResult.SUCCESS */) {
-			AutoSwap.INSTANCE.afterUseOnBlock(this.player, player.inventory, heldStackAtBeginningOfUse, hand);
+			AutoSwap.INSTANCE.afterUseOnBlock(this.player, player.getInventory(), heldStackAtBeginningOfUse, hand);
 		}
 		heldStackAtBeginningOfUse = ItemStack.EMPTY;
 	}
