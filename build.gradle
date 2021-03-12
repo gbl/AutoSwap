@@ -15,7 +15,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 ext.Versions = new Properties()
-Versions.load(file("Versionfiles/mcversion-21w08b.properties").newReader())
+Versions.load(file("Versionfiles/mcversion-21w10a.properties").newReader())
 
 archivesBaseName = "autoswap"
 ext.projectVersion = "1.0.1"
